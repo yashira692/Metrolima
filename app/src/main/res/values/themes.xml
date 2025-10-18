@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Tema principal de la app -->
+    <style name="Theme.MetroLimaGO" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Colores de tu app -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>

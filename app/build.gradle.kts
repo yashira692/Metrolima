@@ -69,6 +69,12 @@ dependencies {
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+    // Jetpack Compose Material3
+    implementation("androidx.compose.material3:material3:1.3.1")
+
+// Necesario para Material icons
+    implementation("androidx.compose.material:material-icons-extended:1.7.3")
+
 }
 
 

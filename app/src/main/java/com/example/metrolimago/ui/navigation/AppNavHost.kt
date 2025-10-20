@@ -5,18 +5,16 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.metrolimago.ui.screens.*
+import com.example.metrolimago.data.MetroDatabase
 
 @Composable
-fun AppNavHost(navController: NavHostController) {
-    NavHost(
-        navController = navController,
-        startDestination = "home"
-    ) {
+fun AppNavHost(navController: NavHostController, db: MetroDatabase) {
+    NavHost(navController, startDestination = "home") {
         composable("home") { HomeScreen(navController) }
-        composable("lista") { ListaEstacionesScreen(navController) }
-        composable("detalle/{id}") { backStackEntry ->
-            val id = backStackEntry.arguments?.getString("id")?.toInt() ?: 0
-            DetalleEstacionScreen(navController, id)
+        composable("lista") { ListaEstacionesScreen(navController, db) }
+        composable("detalle/{id}") { backStack ->
+            val id = backStack.arguments?.getString("id")?.toIntOrNull() ?: 0
+            DetalleEstacionScreen(navController, id, db)
         }
     }
 }

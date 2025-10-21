@@ -47,6 +47,15 @@ fun HomeScreen(navController: NavController) {
             ) {
                 Text("Ver Estaciones")
             }
+            Button(
+                onClick = { navController.navigate("alertas") },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ) {
+                Text("Ver Alertas")
+            }
+
         }
     }
 }

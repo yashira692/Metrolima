@@ -1,4 +1,5 @@
 package com.example.metrolimago.ui.screens
+import com.example.metrolimago.ui.components.BottomNavBar
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -17,10 +18,10 @@ import com.example.metrolimago.R
 fun HomeScreen(navController: NavController) {
     Scaffold(
         topBar = {
-            CenterAlignedTopAppBar(
-                title = { Text("Metro Lima GO") },
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors()
-            )
+            CenterAlignedTopAppBar(title = { Text("Metro Lima GO") })
+        },
+        bottomBar = {
+            BottomNavBar(navController)
         }
     ) { padding ->
         Column(

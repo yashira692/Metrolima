@@ -1,25 +1,20 @@
 package com.example.metrolimago.ui.theme
+import androidx.compose.ui.graphics.Color
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.lightColorScheme
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 
 private val LightColors = lightColorScheme(
-    primary = md_theme_light_primary,
-    onPrimary = md_theme_light_onPrimary,
-    secondary = md_theme_light_secondary,
-    background = md_theme_light_background,
-    onBackground = md_theme_light_onBackground,
+    primary = Color(0xFF1E88E5),
+    secondary = Color(0xFF26A69A),
+    tertiary = Color(0xFFFFC107)
 )
 
 private val DarkColors = darkColorScheme(
-    primary = md_theme_dark_primary,
-    onPrimary = md_theme_dark_onPrimary,
-    secondary = md_theme_dark_secondary,
-    background = md_theme_dark_background,
-    onBackground = md_theme_dark_onBackground,
+    primary = Color(0xFF90CAF9),
+    secondary = Color(0xFF80CBC4),
+    tertiary = Color(0xFFFFF59D)
 )
 
 @Composable
@@ -27,11 +22,12 @@ fun MetroLimaGOTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-    val colorScheme = if (darkTheme) DarkColors else LightColors
+    val colors = if (darkTheme) DarkColors else LightColors
 
     MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
+        colorScheme = colors,
+        typography = Typography(),
+        shapes = Shapes(),
         content = content
     )
 }
